@@ -1,0 +1,48 @@
+.green{ background-color: #00a300; }
+.red{ background-color: #ee1111 }
+.orange{ background-color: #e3a21a }
+.blue{ background-color: #2d89ef }
+.yellow{ background-color: #ffc40d }
+.silver{ background-color: #ccc; }
+
+html, 
+body{ 
+  height: 100%; 
+  margin: 0; 
+  font-family: 'Lato', sans-serif;
+}
+
+.container{
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  display: -webkit-box;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.column{
+  -ms-flex: 2;
+  -webkit-flex: 2;
+  -webkit-box-flex: 1;
+  flex: 2;
+  transition: flex 900ms ease;
+  min-width: 200px;
+  height: 100%;
+  margin: 0;
+}
+
+.column:hover{
+  flex: 8;
+  -webkit-flex: 8;
+  min-width: 250px;
+  background: url('../img/shadow.png') no-repeat center 35%;
+}
+
+.metro-color {
+	color: #fff;
+}

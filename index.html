@@ -1,0 +1,110 @@
+<html>
+<head>
+	<title>WMATA Status</title>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:300,400,700'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="assets/js/modernizr.custom.js"></script>
+</head>
+<body>
+
+  <div class="container desktop">
+    <div class="column red">
+      <a class="next-trains" data-line="rd" onclick="list_stations('rd')" href="#">
+        <div class="center">
+          <h2 class="metro-abbr">RD</h2>
+      	  <h3 class="metro-color">Red Line</h3>
+          <div class="metro-buttons">
+            <p>Click to Expand</p>
+          </div>
+          <div class="destinations">
+            <p>Glenmont<br> to<br> Shady Grove</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column orange">
+      <a class="next-trains" data-line="or" onclick="list_stations('or')" href="#">
+        <div class="center">
+          <h2 class="metro-abbr">OR</h2>
+      	  <h3 class="metro-color">Orange Line</h3>
+          <div class="metro-buttons">
+            <p>Click to Expand</p>
+          </div>
+          <div class="destinations">
+            <p>New Carrollton<br> to<br> Vienna</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column yellow">
+      <a class="next-trains" data-line="yl" onclick="list_stations('yl')" href="#">
+        <div class="center">
+          <h2 class="metro-abbr">YL</h2>
+      	  <h3 class="metro-color">Yellow Line</h3>
+          <div class="metro-buttons">
+            <p>Click to Expand</p>
+          </div>
+          <div class="destinations">
+            <p>Huntington<br> to<br> Ft. Totten</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column green">
+      <a class="next-trains" data-line="gr" onclick="list_stations('gr')" href="#">
+        <div class="center">
+          <h2 class="metro-abbr">GR</h2>
+      	  <h3 class="metro-color">Green Line</h3>
+          <div class="metro-buttons">
+            <p>Click to Expand</p>
+          </div>
+          <div class="destinations">
+            <p>Glenmont<br> to<br> Shady Grove</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column blue">
+      <a class="next-trains" data-line="bl" onclick="list_stations('bl')" href="#">
+        <div class="center">
+          <h2 class="metro-abbr">BL</h2>
+      	  <h3 class="metro-color">Blue Line</h3>
+          <div class="metro-buttons">
+            <p>Click to Expand</p>
+          </div>
+          <div class="destinations">
+            <p>Franconia-Springfield<br> to<br> Largo</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column silver">
+      <a class="next-trains" data-line="sv" onclick="list_stations('sv')" href="#">
+        <div class="center">
+          <h2 class="metro-abbr">SV</h2>
+      	  <h3 class="metro-color">Silver Line</h3>
+          <div class="metro-buttons">
+            <p>Click to Expand</p>
+          </div>
+          <div class="destinations">
+            <p>Wiehle-Reston East<br> to<br> Largo</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="overlay">
+      <div class="content">
+      	<i class="close">Close</i>
+        <div class="message" id="results"></div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+<script async src="assets/js/script.js" type="text/javascript"></script>
+</body>
+</html>

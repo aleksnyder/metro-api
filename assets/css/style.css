@@ -1,0 +1,441 @@
+/* ==========================================================================
+   General
+   ========================================================================== */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.but {
+  display: block;
+  width: 150px;
+  padding: 10px 15px;
+  margin: 1em auto;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Metro Lines
+   ========================================================================== */
+.red {
+  background-color: #D0202D;
+}
+.red .metro-abbr {
+  color: #D0202D;
+}
+.red .but:hover {
+  border: 1px solid #D0202D;
+  color: #D0202D;
+  background-color: #fff;
+}
+
+.orange {
+  background-color: #F18121;
+}
+.orange .metro-abbr {
+  color: #F18121;
+}
+.orange .but:hover {
+  border: 1px solid #F18121;
+  color: #F18121;
+  background-color: #fff;
+}
+
+.yellow {
+  background-color: #FBC916;
+}
+.yellow .metro-abbr {
+  color: #FBC916;
+}
+.yellow .but:hover {
+  border: 1px solid #FBC916;
+  color: #FBC916;
+  background-color: #fff;
+}
+
+.green {
+  background-color: #0D9648;
+}
+.green .metro-abbr {
+  color: #0D9648;
+}
+.green .but:hover {
+  border: 1px solid #0D9648;
+  color: #0D9648;
+  background-color: #fff;
+}
+
+.blue {
+  background-color: #2861AE;
+}
+.blue .metro-abbr {
+  color: #2861AE;
+}
+.blue .but:hover {
+  border: 1px solid #2861AE;
+  color: #2861AE;
+  background-color: #fff;
+}
+
+.silver {
+  background-color: #A0A0A0;
+}
+.silver .metro-abbr {
+  color: #A0A0A0;
+}
+.silver .but:hover {
+  border: 1px solid #A0A0A0;
+  color: #A0A0A0;
+  background-color: #fff;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  width: 100%;
+  height: 100%;
+  transition: all .5s;
+}
+.container.overlayActive {
+  transform: scale(0.9);
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .container {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.column {
+  -ms-flex: 2;
+  -moz-flex: 2;
+  -webkit-flex: 2;
+  flex: 2;
+  transition: flex 900ms ease;
+  -webkit-transition: flex 900ms ease;
+  -moz-transition: flex 900ms ease;
+  -ms-transition: flex 900ms ease;
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+.column .next-trains {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 320px) and (max-width: 459px) {
+  .column .next-trains {
+    height: auto;
+  }
+}
+.column:hover {
+  -ms-flex: 5;
+  -moz-flex: 5;
+  -webkit-flex: 5;
+  flex: 5;
+}
+.column:hover .metro-buttons {
+  opacity: 1;
+}
+@media screen and (min-width: 460px) and (max-width: 779px) {
+  .column:hover {
+    -ms-flex: 2;
+    -webkit-flex: 2;
+    flex: 2;
+  }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .column {
+    -ms-flex: 2;
+    -webkit-flex: 2;
+    flex: 2;
+    height: 20%;
+  }
+}
+
+.center {
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 75%;
+}
+@media screen and (min-width: 460px) and (max-width: 779px) {
+  .center {
+    top: 5%;
+    display: table;
+    height: auto;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 319px) {
+  .center {
+    top: 0;
+    display: table;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .center {
+    top: 5%;
+    display: table;
+    height: auto;
+  }
+}
+
+.metro-color,
+.metro-abbr,
+.metro-buttons {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.metro-color:before {
+  clear: both;
+}
+
+.metro-abbr {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  padding: 35px 20px;
+  margin: 0 auto 35px;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .metro-abbr {
+    margin: 10px auto;
+  }
+}
+@media screen and (min-width: 780px) and (max-width: 1199px) {
+  .metro-abbr {
+    width: 80px;
+    height: 80px;
+    padding: 25px 20px;
+    margin: 10px auto;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 779px) and (orientation: landscape) {
+  .metro-abbr {
+    width: 80px;
+    height: 80px;
+    padding: 25px 20px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 459px) {
+  .metro-abbr {
+    width: 50px;
+    height: 50px;
+    padding: 15px 5px;
+    font-size: 18px;
+    margin: 2px auto 4px;
+  }
+}
+
+.metro-buttons {
+  opacity: 0;
+  margin: 2em auto 0;
+}
+@media screen and (min-width: 780px) and (max-width: 1199px) {
+  .metro-buttons {
+    display: none;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 779px) {
+  .metro-buttons {
+    display: none;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 459px) {
+  .metro-buttons {
+    display: none;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 319px) {
+  .metro-buttons {
+    display: none;
+  }
+}
+
+.destinations {
+  position: absolute;
+  bottom: 2%;
+  left: 10%;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 2em;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .destinations {
+    display: table-cell;
+    width: 33%;
+    top: 0;
+    left: 65%;
+    right: 5%;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 779px) {
+  .destinations {
+    display: table-cell;
+    width: 33%;
+    top: 0;
+    left: 65%;
+    right: 5%;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 779px) and (orientation: landscape) {
+  .destinations {
+    width: 100%;
+    left: 0;
+    top: 100%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 459px) {
+  .destinations {
+    padding-top: .5em;
+  }
+}
+
+/* ==========================================================================
+   Overlay
+   ========================================================================== */
+.overlay {
+  color: #fff;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  overflow: auto;
+  transform: scale(0);
+  transition: all .5s;
+}
+
+.overlayOpen {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   Layout of Overlay
+   ========================================================================== */
+.content {
+  width: 100%;
+  margin: 0 auto;
+  transition: all .5s;
+}
+.content.overlayActive {
+  transform: scale(0.9);
+}
+
+.slideup-results #results,
+.back-home {
+  width: 80%;
+  margin: 2em auto 0;
+}
+
+#results li {
+  padding: .5em 0;
+  list-style: none;
+}
+#results a {
+  color: #fff;
+  text-decoration: none;
+}
+#results a:hover {
+  text-decoration: underline;
+}
+
+.message {
+  font-size: 1.5em;
+  font-weight: 100;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  margin: auto;
+}
+
+.stations {
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  columns: 3;
+  -webkit-column-gap: 2em;
+  -moz-column-gap: 2em;
+  column-gap: 2em;
+}
+
+.close {
+  font-size: 1.25em;
+  font-style: normal;
+  float: right;
+  margin-top: 1em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+.close:before {
+  padding-right: .25em;
+  font-family: FontAwesome;
+  content: "\f05c";
+}
+
+.back {
+  font-size: .8em;
+  font-style: normal;
+  font-weight: 400;
+  float: left;
+  margin-top: 1em;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.back:before {
+  padding-right: .25em;
+  font-family: FontAwesome;
+  content: "\f190";
+}
